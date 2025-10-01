@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './JobCvForm.css';
 
 const JobCvForm = () => {
   const [jobTitle, setJobTitle] = useState('');
   const [requirement, setRequirement] = useState('');
-  const [resume, setResume] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+  const fileInputRef = useRef();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,7 +17,13 @@ const JobCvForm = () => {
     const formData = new FormData();
     formData.append('job_title', jobTitle);
     formData.append('requirement', requirement);
-    if (resume) formData.append('resume', resume);
+    const file = fileInputRef.current?.files[0];
+    if (file) formData.append('resume', file);
+    else {
+      setError('Please select a resume file.');
+      setSubmitting(false);
+      return;
+    }
     try {
       const res = await fetch('https://cari-unoriginal-unseasonably.ngrok-free.dev/webhook/cb64c85e-3c84-46a8-b5eb-7b8691255fb8', {
         method: 'POST',
@@ -25,10 +31,10 @@ const JobCvForm = () => {
       });
       if (!res.ok) throw new Error('Submit failed');
       setSuccess(true);
-      setJobTitle('');
-      setRequirement('');
-      setResume(null);
+      // Clear file input after successful submit
+      if (fileInputRef.current) fileInputRef.current.value = '';
     } catch (err) {
+    console.error(err);
       setError('Submission failed. Please try again.');
     } finally {
       setSubmitting(false);
@@ -49,7 +55,7 @@ const JobCvForm = () => {
         </div>
         <div className="form-group">
           <label>Resume <span className="required">*</span></label>
-          <input type="file" accept=".pdf,.doc,.docx" onChange={e => setResume(e.target.files[0])} required />
+          <input type="file" accept=".pdf,.doc,.docx" ref={fileInputRef} required />
         </div>
         {error && <div className="error-message">{error}</div>}
         {success && <div className="success-message">Submitted successfully!</div>}
