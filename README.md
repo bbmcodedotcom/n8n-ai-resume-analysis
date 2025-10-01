@@ -1,16 +1,45 @@
-# React + Vite
+# 🚀 AI-Powered Resume Analysis with n8n
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Demo Screenshot](public/form_demo.png)
+![workflow](public/workflow.png)
+🎥 [Watch Demo Video](public/demo.mp4)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Overview
 
-## React Compiler
+This project is a **fully automated AI Resume Screening Tool** built with **n8n**, **OpenAI**, and **Google Workspace integrations**.  
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+HR teams only need to:
+1. Enter the **Job Title**
+2. Paste the **Job Requirement**
+3. Upload a candidate’s **CV (.pdf)**
+4. Click **Submit**
 
-## Expanding the ESLint configuration
+✅ That’s it — the rest is 100% automated.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The workflow:
+- Analyzes the CV content with **AI (OpenAI)**
+- Compares candidate skills & experience against job requirements
+- Generates an **HR Review Report**
+- Uploads the CV to **Google Drive**
+- Logs candidate details & AI evaluation into **Google Sheets**
+- Sends an **email report** back to HR
+
+---
+
+## ✨ Features
+
+- 📂 Upload CVs via simple web form  
+- 🤖 Automatic AI-powered resume analysis  
+- 📊 Match score between candidate profile and job requirement  
+- ☁️ CV stored safely in Google Drive  
+- 📑 Candidate details saved in Google Sheets  
+- 📧 Email report sent directly to HR mailbox  
+
+---
+
+## 📩 Contact & Support
+
+For n8n support, or to integrate automated AI agents into your business, please contact me: **bbmcode247@gmail.com**
+
