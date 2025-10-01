@@ -1,0 +1,97 @@
+.jobcv-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.jobcv-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 32px 32px 24px 32px;
+  width: 350px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.jobcv-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  text-align: left;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.form-group .required {
+  color: #ff5c5c;
+  margin-left: 2px;
+}
+
+input[type="text"], textarea {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  background: #fafafa;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus, textarea:focus {
+  border: 1.5px solid #ff5c5c;
+  outline: none;
+}
+
+textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+input[type="file"] {
+  border: none;
+  background: none;
+  font-size: 1rem;
+}
+
+.submit-btn {
+  background: #ff5c5c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.submit-btn:disabled {
+  background: #ffb3b3;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ff5c5c;
+  text-align: center;
+  font-size: 0.98rem;
+}
+
+.success-message {
+  color: #2ecc40;
+  text-align: center;
+  font-size: 0.98rem;
+}
