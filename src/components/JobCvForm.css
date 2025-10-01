@@ -9,19 +9,19 @@
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-  padding: 32px 32px 24px 32px;
-  width: 350px;
-  max-width: 95vw;
+  padding: 40px 40px 32px 40px;
+  width: 480px;
+  max-width: 98vw;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 22px;
 }
 
 .jobcv-form h2 {
   text-align: center;
-  margin-bottom: 10px;
-  font-size: 1.3rem;
-  font-weight: 500;
+  margin-bottom: 16px;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 .form-group {
@@ -44,8 +44,8 @@
 input[type="text"], textarea {
   border: 1px solid #e0e0e0;
   border-radius: 6px;
-  padding: 8px 10px;
-  font-size: 1rem;
+  padding: 12px 14px;
+  font-size: 1.08rem;
   background: #fafafa;
   transition: border 0.2s;
 }
@@ -56,8 +56,10 @@ input[type="text"]:focus, textarea:focus {
 }
 
 textarea {
-  min-height: 60px;
+  min-height: 120px;
+  font-size: 1.08rem;
   resize: vertical;
+  width: 100%;
 }
 
 input[type="file"] {

@@ -34,7 +34,6 @@ const JobCvForm = () => {
       // Clear file input after successful submit
       if (fileInputRef.current) fileInputRef.current.value = '';
     } catch (err) {
-    console.error(err);
       setError('Submission failed. Please try again.');
     } finally {
       setSubmitting(false);
@@ -51,10 +50,10 @@ const JobCvForm = () => {
         </div>
         <div className="form-group">
           <label>Requirement <span className="required">*</span></label>
-          <textarea value={requirement} onChange={e => setRequirement(e.target.value)} placeholder="Job requirement" required />
+          <textarea value={requirement} onChange={e => setRequirement(e.target.value)} placeholder="Job description" required />
         </div>
         <div className="form-group">
-          <label>Resume <span className="required">*</span></label>
+          <label>Resume (.pdf) <span className="required">*</span></label>
           <input type="file" accept=".pdf,.doc,.docx" ref={fileInputRef} required />
         </div>
         {error && <div className="error-message">{error}</div>}
